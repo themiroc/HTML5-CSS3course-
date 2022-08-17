@@ -1,0 +1,111 @@
+/* Normalize.css adjustment */
+
+body {
+    margin: 10px;
+}
+
+p {
+    color: orange;
+    font-size: larger;
+  }
+
+/* ID selector */
+
+  #products {
+    color: black;
+  }
+
+/* Class selector */
+
+  .product {
+    color: black;
+  }
+
+/* Attributes selector */
+
+  a[target] {
+    color: deeppink;
+  }
+  a[target="_blank"] {
+    color: deeppink;
+  } 
+  
+
+  a[href="https:google.com"] {        /* ! this one is fragile  */
+    color: deeppink;
+  }       
+  a[href*="google"] {
+    font-size: xx-large;
+    color: orange;
+}                                     /* this one is flexible as it searches for the word, no matter the changes */
+
+  a[href^="https"] {
+    color: deeppink;
+}                 /* to look for attributes that begin with a given value */
+
+
+a[href$=".com"] {
+    color: deeppink;
+}
+
+
+  a [href^="https"] [href$=".com"] {
+    color: deeppink;
+  }
+
+/* Relational selectors */             /* ! can be fregile if elements are moved around */
+
+#product p {
+    color: orange;
+}
+
+#products > p {
+    color: red;
+}
+
+#products + p {
+    color: blueviolet;
+}
+
+#products ~ p {
+    font-size: xx-large;
+} 
+
+/* Pseudo-class selectors */
+
+/* article :first-child {
+    font-size: 140%;
+    font-style: italic;
+} */
+
+article p:first-of-type{
+    font-size: 100%;
+    font-style: italic;
+}
+
+article p:last-of-type {
+    font-weight: bold;
+}
+
+article :last-child {
+    font-weight: bold;
+}
+
+ul li:nth-child(odd) {
+    color: deeppink;
+}
+ul li:nth-child(even) {
+    color: deepskyblue;
+ }
+
+ul li:nth-child(3n) {
+    font-style: italic;
+}
+
+a:visited, a:link {
+    color: dodgerblue;
+}
+
+a:hover, a:focus {                       /* hover can be applied to any element */
+    color: deeppink;
+}

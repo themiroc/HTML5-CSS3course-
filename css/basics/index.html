@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- rel and href are attributes of the link element -->
+    <style>
+      p {
+        color: orange;
+      }
+
+      #last {
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Style types</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p style="color: blue; font-weight: bold">Lorem ipsum dolor sit amet.</p>
+    <p id="last">Lorem ipsum dolor sit amet.</p>
+
+    <br />
+    <h2>Selectors</h2>
+    <section id="products">
+      <article class="product"></article>
+      <article class="product"></article>
+      <article class="product"></article>
+
+      <p>1 Lorem ipsum dolor sit amet.</p>
+      <br />
+      <article>
+        <p>2 Lorem ipsum dolor sit amet.</p>
+        <p>2 Lorem ipsum dolor sit amet.</p>
+        <a href="#">Link con HOVER</a>
+      </article>
+      <br />
+      <article>
+        <h3>Donde esta mi gente</h3>
+        <p>3 Lorem ipsum dolor sit amet.</p>
+        <p>4 Minus, accusamus nostrum! Similique, voluptatibus!</p>
+        <a href="https:weirdsite.com">Link</a>
+      </article>
+    </section>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <a href="https:google.com" target="_blank">Google</a>
+    <br /><br />
+    <article>
+      <h2>Style based on the position of the container</h2>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ul>
+    </article>
+  </body>
+</html>
+
+<!-- 
+
+Separation of concerns principle
+
+Styles: 
++ Embedded stylesheets
+    not scalable. violates SCP
+    <style> tag in hed section
++ External stylesheets 
+    preferred. scalable
+    <link> tag in head section
++ Inline styles 
+    avoid, violates SCP. A better aproach is to give an identifier to desired elements
+
+Use Normalize.css to avoid rendering issues among different browsers. Adjust body margin to 10px
+ 
+-->

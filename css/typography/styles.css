@@ -1,0 +1,177 @@
+/*?     Embeding web fonts
+
+fontsquirrel.com
+fonts.com
+myfonts.com
+
+Font formats: TTF, OTF, EOT, WOFF, WOFF 2.0 last two are more compressed 
+
+Convert to woff or woff 2.0 in fontsquirrel for lighter files
+
+Add the folder with the woff files
+
+Embedd it to the stylesheet with @font-face
+*/
+
+/*?     Font families
+Serif (classy)/ Sans-serif (relaxed) / Monospace (one space per letter)  */
+
+/*?     Font services
+
+google web fonts (free)
+Subscription:
+adobe fonts
+fonts.com
+fontdeck.com
+*/
+
+/* ?    System font stack
+
+So the browser uses the default fonts in the system of the user
+This improves the performance
+font-family: -apple + enter
+*/
+
+/* ?    Sizing fonts
+font-size
+/*todo: font-scale.com
+*/
+
+/* ?    Ideal line lenght    
+Should be between 50 - 70 characters
+Use the 'ch' unit, which is equivalent to '0' (zeros). 50ch is 50 zeros.
+*/
+
+/* ?    Formatting text
+text-align 
+text-indent
+text-decoration
+text-transform
+white-space
+column-*
+direction
+*/
+
+@font-face {
+  font-family: "opensans";
+  src: url("/css/fonts/open-sans/opensans-bold-webfont.woff2") format("woff2"),
+    url("/css/fonts/open-sans/opensans-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "opensans";
+  src: url("/css/fonts/open-sans/opensans-regular-webfont.woff2")
+      format("woff2"),
+    url("/css/fonts/open-sans/opensans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+  /* allows a waiting period for the browser to download the file */
+  /* 'optional' will show other font but will store the desired font in  cache for upcoming visits. Don't apply 'block' */
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 10px;
+  /** font-family: 'Open Sans', Arial, Helvetica, sans-serif; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+
+  /*?   Vertical spacing */
+  line-height: 1.5;
+  /* adjust this to one and a half times the font size. separation between lines. it's better to use a 1.5 factor than 1.5rem */
+
+  /*?   Horizontal spacing */
+  /** letter-spacing: 1px; */
+  /** word-spacing: 2px; */
+
+  /*?   Direction of the text */
+  /** direction: rtl; */
+  /* 'right to left', such as arabic languages */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /** font-family: Georgia, 'Times New Roman', Times, serif; */ /* Web safe fonts */
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+  font-size: 4.209rem;
+  margin: 3rem 0 1rem;
+  /* to apply an upper separation */
+  text-transform: capitalize;
+  /* Useful for headings */
+  letter-spacing: -1px;
+  /* so the heading looks more compact */
+}
+
+h2 {
+  font-size: 3.157rem;
+}
+
+p {
+  font-weight: normal;
+  /** font-style: ; */
+  font-size: 1rem;
+  color: #333;
+  /** width: 50ch; */
+  /* 50 zeros= 50 - 70 characters */
+  text-align: left;
+  /** text-transform: uppercase; */
+  /** border: 3px solid gold; */
+
+  line-clamp: 3;
+  /* will truncate the text after 3 lines */
+  /*! this one doesn't work */
+
+  /*?   Multiple columns text  */
+  column-count: 2;
+  column-gap: 1rem;
+  column-rule: 3px dotted #999;
+}
+
+/*?     Truncate text     */
+.truncated {
+  /* width: 50ch; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* this will add three dots at the end */
+}
+
+/*?     Good Line clamp     */
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  /* will truncate the text after 3 lines */
+  /* won't take the column-count property */
+  width: 50ch;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+p + p {
+  /* this relational selector will select the next parragrph after the first one */
+  text-indent: 1rem;
+}
+
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 130%;
+  }
+}
