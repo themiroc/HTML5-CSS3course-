@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images in CSS</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/4743b77724.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- <img
+      class="plant"
+      src="/images/800x600/photo-1417533366444-43834ad6b3bb.jpg"
+      alt="A little sage plant"
+    /> -->
+
+    <!-- <h1>My Heading</h1> -->
+
+    <!--* CSS Sprites  -->
+    <!-- <div class="image">
+      <img src="/images/Icons/128 px/001-favourite.png" alt="" />
+      <img src="/images/Icons/128 px/002-play.png" alt="" />
+      <img src="/images/Icons/128 px/003-high-volume.png" alt="" />
+      <img src="/images/Icons/128 px/004-download.png" alt="" />
+      <img src="/images/Icons/128 px/005-next.png" alt="" />
+      <img src="/images/Icons/128 px/006-playlist.png" alt="" />
+    </div>
+ -->
+
+    <!-- We can convert these image files into only one by using css sprites generator so the HTTP requests from multiple users are fewer. The images will be downloaded by the css file -->
+
+    <!-- <span class="bg-001_favourite"></span>
+    <span class="bg-002_play"></span>
+    <span class="bg-003_high_volume"></span>
+    <span class="bg-004_download"></span>
+    <span class="bg-005_next"></span>
+    <span class="bg-006_playlist"></span> -->
+
+    <!--* Data URLS 
+
+Another optimization technique to reduce HTTP requests
+Drawbacks: 
+new size of the file is larger than the original
+increased complexity in markup
+slow on mobile devices 
+-->
+
+    <!-- <img
+    alt="001-favourite.png"
+    src="data:image/png;base64,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"
+    /> -->
+
+    <!--* Clipping -->
+    <!-- <img
+      class="plant"
+      src="/images/800x600/photo-1417533366444-43834ad6b3bb.jpg"
+      alt="A little sage plant"
+    />
+
+    <img
+      class="shop"
+      src="/images/800x600/photo-1453614512568-c4024d13c247.jpg"
+      alt=""
+    /> -->
+
+    <!--* CSS Filters  -->
+    <!-- <img
+      class="macaron"
+      src="/images/800x600/photo-1455560460927-c48345dd421d.jpg"
+      alt=""
+    /> -->
+
+    <!--* Supporting high-density screens  -->
+    <!-- <img src="/images/dishes.jpg" alt="Dishes of salad" class="dish" />
+
+    <img
+      src="/images/dishes.jpg"
+      alt="Dishes of salad"
+      class="dish"
+      srcset="
+        /images/dishes.jpg    1x,
+        /images/dishes@2x.jpg 2x,
+        /images/dishes@3x.jpg 3x
+      "
+    /> -->
+
+    <!--* Resolution switching  -->
+    <!-- <img
+      src="/images/dishes.jpg"
+      alt="Dishes of salad"
+      class="dish"
+      srcset="
+        /images/dishes.jpg     400w,
+        /images/dishes@2x.jpg  800w,
+        /images/dishes@3x.jpg 1200w
+      "
+      sizes="
+        (max-width: 500px) 100vw,
+        (max-width: 700px)  50vw,
+        33vw
+      "
+    /> -->
+    <!-- 400(w) means the actual width of the image -->
+    <!-- we'll use media conditions.
+    works perfectly on chrome but not on firefox -->
+
+    <!-- use a responsive image breakpoints generator to get this assets -->
+    <!-- <picture>
+      <img
+        sizes="(max-width: 1400px) 100vw, 1400px"
+        srcset="
+          /images/dishes_images/dishes_a0l3c7_c_scale,w_200.jpg   200w,
+          /images/dishes_images/dishes_a0l3c7_c_scale,w_670.jpg   670w,
+          /images/dishes_images/dishes_a0l3c7_c_scale,w_985.jpg   985w,
+          /images/dishes_images/dishes_a0l3c7_c_scale,w_1240.jpg 1240w,
+          /images/dishes_images/dishes_a0l3c7_c_scale,w_1400.jpg 1400w
+        "
+        src="/images/dishes_images/dishes_a0l3c7_c_scale,w_1400.jpg"
+        alt=""
+      />
+    </picture> -->
+
+    <!--* Using modern image formats
+    Dealing with multiple browsers using different sources for images  -->
+    <!--     <picture>
+      <source type="image/webp" srcset="/images/dishes_400.webp" />
+      <source type="image/jpeg" srcset="/images/dishes_400.jpg" />
+      <img src="/images/dishes_400.jpg" alt="Dishes of salad" />
+    </picture> 
+  -->
+    <!-- doesn't work without the img tag -->
+
+    <!--* Art direction
+    Use of modified images to switch them between devices  -->
+    <!-- <picture>
+      <source
+        media="(max-width: 500px)"
+        srcset="/images/dishes_full_cropped.jpg"
+      />
+      <source media="(min-width: 501px)" srcset="/images/dishes_full.jpg" />
+      <img class="dish" src="/images/dishes_full.jpg" alt="" />
+    </picture> -->
+
+    <!--* SVG images -->
+    <!-- <div class="icons">
+      <img
+        class="sword"
+        src="/images/svg_icons/sword-origami-paper-svgrepo-com.svg"
+        alt=""
+      />
+      <img
+        src="/images/svg_icons/dragon-origami-paper-svgrepo-com.svg"
+        alt=""
+      /><img
+        src="/images/svg_icons/penguin-origami-paper-svgrepo-com.svg"
+        alt=""
+      /><img
+        src="/images/svg_icons/horse-origami-paper-svgrepo-com.svg"
+        alt=""
+      /><img src="/images/svg_icons/owl-origami-paper-svgrepo-com.svg" alt="" />
+    </div> -->
+
+    <span class="icon beat">
+      <i class="fa-solid fa-user-ninja fa-beat"></i>
+    </span>
+
+    <span class="icon fade">
+      <i class="fa-solid fa-user-ninja fa-fade"></i>
+    </span>
+
+    <span class="icon beat-fade">
+      <i class="fa-solid fa-user-ninja fa-beat-fade"></i>
+    </span>
+
+    <span class="icon bounce">
+      <i class="fa-solid fa-user-ninja fa-bounce"></i>
+    </span>
+
+    <span class="icon flip">
+      <i class="fa-solid fa-user-ninja fa-flip"></i>
+    </span>
+
+    <span class="icon shake">
+      <i class="fa-solid fa-user-ninja fa-shake"></i>
+    </span>
+
+    <span class="icon spin">
+      <i class="fa-solid fa-cog fa-spin"></i>
+    </span>
+    <!-- add fa-spin-pulse class to make it spin in eight steps clockwise. fa-spin-reverse to reverse motion  -->
+
+    <!--* Icons in a list  -->
+    <ul class="fa-ul">
+      <li>
+        <span class="fa-li"><i class="fa-solid fa-check-square"></i></span>List
+        icons can
+      </li>
+      <li>
+        <span class="fa-li"><i class="fa-solid fa-check-square"></i></span>be
+        used to
+      </li>
+      <li>
+        <span class="fa-li"><i class="fa-solid fa-spinner fa-pulse"></i></span
+        >replace bullets
+      </li>
+      <li>
+        <span class="fa-li"><i class="fa-regular fa-square"></i></span>in lists
+      </li>
+    </ul>
+
+    <!--* Layering text and counters  -->
+    <!-- JS Font Awesome packages are needed for this -->
+    <div class="fa-4x">
+      <span class="fa-layers fa-fw" style="background: MistyRose">
+        <i class="fa-solid fa-circle" style="color: Tomato"></i>
+        <i
+          class="fa-inverse fa-solid fa-times"
+          data-fa-transform="shrink-6"
+        ></i>
+      </span>
+
+      <span class="fa-layers fa-fw" style="background: MistyRose">
+        <i class="fa-solid fa-bookmark"></i>
+        <i
+          class="fa-inverse fa-solid fa-heart"
+          data-fa-transform="shrink-10 up-2"
+          style="color: Tomato"
+        ></i>
+      </span>
+
+      <span class="fa-layers fa-fw" style="background: MistyRose">
+        <i class="fa-solid fa-play" data-fa-transform="rotate--90 grow-4"></i>
+        <i
+          class="fa-solid fa-sun fa-inverse"
+          data-fa-transform="shrink-10 up-2"
+        ></i>
+        <i
+          class="fa-solid fa-moon fa-inverse"
+          data-fa-transform="shrink-11 down-4.2 left-4"
+        ></i>
+        <i
+          class="fa-solid fa-star fa-inverse"
+          data-fa-transform="shrink-11 down-4.2 right-4"
+        ></i>
+      </span>
+
+      <span class="fa-layers fa-fw" style="background: MistyRose">
+        <i class="fa-solid fa-calendar"></i>
+        <span
+          class="fa-layers-text fa-inverse"
+          data-fa-transform="shrink-8 down-3"
+          style="font-weight: 900"
+          >27</span
+        >
+      </span>
+
+      <span class="fa-layers fa-fw" style="background: MistyRose">
+        <i class="fa-solid fa-certificate"></i>
+        <span
+          class="fa-layers-text fa-inverse"
+          data-fa-transform="shrink-11.5 rotate--30"
+          style="font-weight: 900"
+          >NEW</span
+        >
+      </span>
+
+      <span class="fa-layers fa-fw" style="background: MistyRose">
+        <i class="fa-solid fa-envelope"></i>
+        <span class="fa-layers-counter" style="background: Tomato">1,419</span>
+      </span>
+    </div>
+  </body>
+</html>

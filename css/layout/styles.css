@@ -1,65 +1,70 @@
-/* html */ {
-    font-size: 62.5%;                /* 62.5% of 16px = 10px */
+/* html */
+ {
+  font-size: 62.5%; /* 62.5% of 16px = 10px */
 }
 
 *,                                  /* universal selector for all elements in the html document */
 *::before,                          /* must be added to include pseudo-elements */
-*::after {                         
-    box-sizing: border-box;         /* this will not apply to pseudo-elements */
+*::after {
+  box-sizing: border-box; /* this will not apply to pseudo-elements */
 }
 
 body {
-    /* margin: 10px; */
-    /* width: 300px; */             /* if not defined, it's 100% of the available space */
-    /* height: 200vh; */
+  /* margin: 10px; */
+  /* width: 300px; */ /* if not defined, it's 100% of the available space */
+  /* height: 200vh; */
 }
 
 /** Box model
 
 Content, padding, border, margin */
 
-/* p */ {
-    padding: 10px 20px 10px 20px;  /* trbl . with two values this is vertical and horizontal (10px 20px) */ 
-    /* border: 5px solid gold; */
+/* p */
+ {
+  padding: 10px 20px 10px 20px; /* trbl . with two values this is vertical and horizontal (10px 20px) */
+  /* border: 5px solid gold; */
 }
 
-/* p */ {
-    padding: 20px;                  /* 40px de separacion entre los elementos */
-    margin: 0;
+/* p */
+ {
+  padding: 20px; /* 40px de separacion entre los elementos */
+  margin: 0;
 }
 
-/* p */ {
-    margin: 20px;                   /* ocurre margin collapsing, haciendo la separacion de solo 20px  */
-    padding: 0;
+/* p */
+ {
+  margin: 20px; /* ocurre margin collapsing, haciendo la separacion de solo 20px  */
+  padding: 0;
 }
 
-/* .box */ {
-    width: 100px;           
-    height: 100px;
-    background-color: gold;  
-    padding: 20px;      
-    border: 10px solid orange;            /* adding a border or a padding will make it bigger */
-    margin: 50px;                     /* doesn't affect the size of the box */
-    box-sizing: border-box;           /* will maintain the size of the box 100x100. */
-                                            /* it's better to use a universal selector "*" */
-    display: inline-block;                  /* to give inline elements block elements level */
+/* .box */
+ {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  padding: 20px;
+  border: 10px solid orange; /* adding a border or a padding will make it bigger */
+  margin: 50px; /* doesn't affect the size of the box */
+  box-sizing: border-box; /* will maintain the size of the box 100x100. */
+  /* it's better to use a universal selector "*" */
+  display: inline-block; /* to give inline elements block elements level */
 }
 
-/* .box::before */ {
-    content: "Hello";
+/* .box::before */
+ {
+  content: "Hello";
 }
-
 
 /** Overflow */
 
-/* .box */ {
-    border: 3px solid gold;
-    width: 150px;
-    height: 150px;   
-    overflow: auto;        /* attr. scroll: overflow will show scroll bars. auto shows bars only if OF occurs */
-    /* overflow: hidden auto; */  
+/* .box */
+ {
+  border: 3px solid gold;
+  width: 150px;
+  height: 150px;
+  overflow: auto; /* attr. scroll: overflow will show scroll bars. auto shows bars only if OF occurs */
+  /* overflow: hidden auto; */
 }
-
 
 /** Measurement units
 
@@ -70,32 +75,34 @@ vw, vh relative to the viewport
 em, rem relative to the font size, so the layout adjusts to its size
 */
 
-/* .box */ {
-    width: 100px;
-    height: 100px;
-    background-color: gold;
-    border-top: 3px solid orange;
+/* .box */
+ {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  border-top: 3px solid orange;
 }
 
-/* .box */ {
-    /* 50% of the width of the parent element */
-    width: 50%;
-    /* height: 100px; */
-    height: 100vh;
-    background-color: gold;
-    border-top: 3px solid orange;
-} 
+/* .box */
+ {
+  /* 50% of the width of the parent element */
+  width: 50%;
+  /* height: 100px; */
+  height: 100vh;
+  background-color: gold;
+  border-top: 3px solid orange;
+}
 
-/* .box */ {
-    /* width: 10em; */      /* 10 x font size of the width of the parent element */
-                            /* if FS is not defined, it will inherit the FS of the parent element. HTML = 16px. 10em = 10 x 16px = 160px */
-    width: 15rem;           /* 10 x font size of the width of the root element (HTML). more predictable, you can define html font-size to 10px with the attribute font-size: 62.5% */
-    font-size: 20px;
-    height: 100vh;
-    background-color: gold;
-    border-top: 3px solid orange;
-} 
-
+/* .box */
+ {
+  /* width: 10em; */ /* 10 x font size of the width of the parent element */
+  /* if FS is not defined, it will inherit the FS of the parent element. HTML = 16px. 10em = 10 x 16px = 160px */
+  width: 15rem; /* 10 x font size of the width of the root element (HTML). more predictable, you can define html font-size to 10px with the attribute font-size: 62.5% */
+  font-size: 20px;
+  height: 100vh;
+  background-color: gold;
+  border-top: 3px solid orange;
+}
 
 /** Positioning  
 
@@ -104,285 +111,295 @@ Absolute: relative to the parent
 Fixed: relative to the viewport
 */
 
-
-/* .boxes */ {
-    border: 3px solid lightgray;
-    position: relative;         /* so I can position children absolutely */
+/* .boxes */
+ {
+  border: 3px solid lightgray;
+  position: relative; /* so I can position children absolutely */
 }
 
-/* .box */ {
-    width: 5rem;
-    height: 5rem;
+/* .box */
+ {
+  width: 5rem;
+  height: 5rem;
 }
 
-/* .box-one */ {
-    background: gold;
+/* .box-one */
+ {
+  background: gold;
 }
 
-/* .box-two */ {
-    background: tomato;
-    position: relative;           /* so it can be moved, being the parent positioned absolutely (default) */
-    /* left: 5rem; */
-    /* left: -4rem; */            /* the same as appliying right: 4rem; */
-    left: 4rem;
-    bottom: 4rem;
-    z-index: -1;                  /* provides deep layering the elements. - values > bottom, + values > top */
+/* .box-two */
+ {
+  background: tomato;
+  position: relative; /* so it can be moved, being the parent positioned absolutely (default) */
+  /* left: 5rem; */
+  /* left: -4rem; */ /* the same as appliying right: 4rem; */
+  left: 4rem;
+  bottom: 4rem;
+  z-index: -1; /* provides deep layering the elements. - values > bottom, + values > top */
 }
 
-/* .box-two */ {
-    background: tomato;
-    position: absolute;         /* now the element is in a different layer and the rest of the elements render as if it's not there */
-    right: 0;
-    bottom: 0;
-    z-index: 1; 
+/* .box-two */
+ {
+  background: tomato;
+  position: absolute; /* now the element is in a different layer and the rest of the elements render as if it's not there */
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
-/* .box-two */ {
-    background: tomato;
-    position: fixed; 
-    top: 0;
-    z-index: 1; 
+/* .box-two */
+ {
+  background: tomato;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
-/* .box-two */ {
-    background: tomato;
-    position: fixed; 
-    top: 0;
-    left: 2rem;
-    right: 2rem;
-    width: auto;            /* so it ignores the width given in the box class */
-    z-index: 1; 
+/* .box-two */
+ {
+  background: tomato;
+  position: fixed;
+  top: 0;
+  left: 2rem;
+  right: 2rem;
+  width: auto; /* so it ignores the width given in the box class */
+  z-index: 1;
 }
 
-/* .box-three */ {
-    background: dodgerblue;
+/* .box-three */
+ {
+  background: dodgerblue;
 }
-
 
 /** Floating elements  (not used anymore)*/
 
 .tweet {
-    border: 3px solid lightgray;    /* the parent element doesn't see the floated elements */
+  border: 3px solid lightgray; /* the parent element doesn't see the floated elements */
 }
 
 /* Second solution to floated elements not being recognized by the parent. Pseudo-elements */
 /* If you have another floated element such as advertising, you'd have to repeat this */
-.tweet::after {                     
-    content: '';
-    display: block;
-    clear: both;
+.tweet::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 /* So a better solution is the following */
-.clearfix::after {              /* some programmers call it clearfix */
-    content: '';
-    display: block;
-    clear: both;
-
+.clearfix::after {
+  /* some programmers call it clearfix */
+  content: "";
+  display: block;
+  clear: both;
 }
- 
+
 .avatar {
-    width: 5rem;
-    height: 5rem;
-    background-color: gold;
-    float: left;
-    /* float: right; */
-    margin-right: 0.5rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  float: left;
+  /* float: right; */
+  margin-right: 0.5rem;
 }
 
 .clear {
-    clear: both;            /* if you don't want one of the elements to float around the floated element */
+  clear: both; /* if you don't want one of the elements to float around the floated element */
 }
 
+/** Flexible box layout (FlexBox) */
 
-/* Flexible box layout (FlexBox) */
-
-/* Aligning items
+/** Aligning items
 justify-content (along the main axis)
 aligh-items (along the cross axis)
 align-content  when you have multiple items*/
 
-/* .container */ {
-    border: 3px solid lightgrey;
-    display: flex;
-    /* flex-direction: column; */                   /* default is row */
-    justify-content: center;
-    /* justify-content: space-evenly; */
-    /* justify-content: space-between; */
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    height: 90vh;
-} 
-
-/* .container */ {
-    border: 3px solid lightgrey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
+/* .container */
+ {
+  border: 3px solid lightgrey;
+  display: flex;
+  /* flex-direction: column; */ /* default is row */
+  justify-content: center;
+  /* justify-content: space-evenly; */
+  /* justify-content: space-between; */
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 90vh;
 }
 
-/* .box */ {
-    width: 5rem;
-    height: 5rem;
-    background-color: gold;
-    margin: 1rem;
+/* .container */
+ {
+  border: 3px solid lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 }
 
-/* .box-one */ {
-    align-self: flex-start;             /* to override the align items property used before */
-    align-self: flex-end;
+/* .box */
+ {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin: 1rem;
 }
 
-/* Sizing items
+/* .box-one */
+ {
+  align-self: flex-start; /* to override the align items property used before */
+  align-self: flex-end;
+}
+
+/** Sizing items
 
 flex-basis (the initial size of a flex item)
 flex-grow (the groth factor)
 flex-shrink (the shrink factor)
 flex  (shorthand for the previous three)*/
 
-/* .box */ {
-    /* flex-basis: 15rem; */
-    /* flex-basis: 10rem; */
-    /* flex-grow: 1; */
-    /* flex-shrink: 1; */
-    flex: 1 1 15rem;          /* first number grow, second shrink, third a measure for  basis */
-    width: 5rem;
-    height: 5rem;
-    background-color: gold;
-    margin: 1rem;
+/* .box */
+ {
+  /* flex-basis: 15rem; */
+  /* flex-basis: 10rem; */
+  /* flex-grow: 1; */
+  /* flex-shrink: 1; */
+  flex: 1 1 15rem; /* first number grow, second shrink, third a measure for  basis */
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin: 1rem;
 }
 
-/* .box-one */ {
-    /* flex-basis: 5rem; */
-    /* flex-grow: 2; */
-    /* flex-shrink: 0; */
+/* .box-one */
+ {
+  /* flex-basis: 5rem; */
+  /* flex-grow: 2; */
+  /* flex-shrink: 0; */
 }
 
-
-
-/* Grid */
+/** Grid */
 
 /* Aligning items
 justify-items (along de horizontal axis)
 align-items (along de vertical axis)
 */
 
-/* Gap
+/** Gap
 row-gap
 colum-gap
 gap (shorthand)
 */
 
-/* Placing items
+/** Placing items
 grid-row
 grid-column
 grid-area (shorthand)
  */
 
- /* Placing items in named areas
+/** Placing items in named areas
   grid-template- areas
  grid-area
  */
 
-/* .container */ {
-    display: grid;
-    /* 3 x 2 */
-    /* grid-template-rows: 100px 100px 100px; */
-    /* grid-template-rows: repeat(3, 100px); */
-    /* grid-template-columns: 100px 100px; */
-    /* grid-template-columns: repeat(2,100px); */
-    /* grid-template: repeat(3, 100px) / repeat(2, 100px); */
-    /* grid-template: repeat(3, 100px) / 30% 70%; */
-    /* grid-template: repeat(3, 100px) / 100px 30fr 70fr; */          /* fr: fraction of the available space */
-    grid-template: 100px auto 100px / 30fr 70fr;            /* auto will take the rest of the available space */
-    grid-template-areas: 
-    "header     header" 
-    "sidebar    main" 
+/* .container */
+ {
+  display: grid;
+  /* 3 x 2 */
+  /* grid-template-rows: 100px 100px 100px; */
+  /* grid-template-rows: repeat(3, 100px); */
+  /* grid-template-columns: 100px 100px; */
+  /* grid-template-columns: repeat(2,100px); */
+  /* grid-template: repeat(3, 100px) / repeat(2, 100px); */
+  /* grid-template: repeat(3, 100px) / 30% 70%; */
+  /* grid-template: repeat(3, 100px) / 100px 30fr 70fr; */ /* fr: fraction of the available space */
+  grid-template: 100px auto 100px / 30fr 70fr; /* auto will take the rest of the available space */
+  grid-template-areas:
+    "header     header"
+    "sidebar    main"
     /* "footer     footer"; */
-    ".          footer";                /* that dot means an empty cell  */
-    border: 3px solid lightgrey;
-    /* justify-items: center; */
-    /* justify-items: stretch; */                         /* stretch is by default */                             
-    /* align-items: center; */
-    /* align-items: stretch; */
-    /* justify-content: center; */                          /* content: the grid as a whole. items: individual items */
-    /* align-content: center; */
-    height: 100vh;
-    /* row-gap: 10px; */
-    /* column-gap: 10px; */
-    gap: 10px;                              /* 10 10 */
+    ".          footer"; /* that dot means an empty cell  */
+  border: 3px solid lightgrey;
+  /* justify-items: center; */
+  /* justify-items: stretch; */ /* stretch is by default */
+  /* align-items: center; */
+  /* align-items: stretch; */
+  /* justify-content: center; */ /* content: the grid as a whole. items: individual items */
+  /* align-content: center; */
+  height: 100vh;
+  /* row-gap: 10px; */
+  /* column-gap: 10px; */
+  gap: 10px; /* 10 10 */
 }
 
-/* .box  */{
-    /* width: 5rem;     */              /* removed this so the stretch property for items could work */
-    /* height: 5rem; */
-    background-color: gold;
+/* .box  */
+ {
+  /* width: 5rem;     */ /* removed this so the stretch property for items could work */
+  /* height: 5rem; */
+  background-color: gold;
 }
 
 .box-one {
-    /* grid-column: 2; */
-    /* grid-column: 1 / 3;  */    /* line 3 or line -1 */
-    grid-column: 1 / span 2;        /* positioned on column 1, taking 2 cells */
-    /* grid-row: 2; */
-    /* grid-row: 2 / 4; */
-    /* grid-row: 2 / span 2; */
-    /* grid-area: 1 / 1 / 1 / 3; */                /* start / end / row / column */
-    grid-area: header;
+  /* grid-column: 2; */
+  /* grid-column: 1 / 3;  */ /* line 3 or line -1 */
+  grid-column: 1 / span 2; /* positioned on column 1, taking 2 cells */
+  /* grid-row: 2; */
+  /* grid-row: 2 / 4; */
+  /* grid-row: 2 / span 2; */
+  /* grid-area: 1 / 1 / 1 / 3; */ /* start / end / row / column */
+  grid-area: header;
 }
 
 .box-four {
-    grid-area: footer;      /* automatically will take the area with the two footer cells */
+  grid-area: footer; /* automatically will take the area with the two footer cells */
 }
-
 
 /* Hiding elements */
 
 .first {
-    /* display: none; */        /* it will show anything */
-    visibility: hidden;         /* the space will still be alocated */
+  /* display: none; */ /* it will show anything */
+  visibility: hidden; /* the space will still be alocated */
 }
-
 
 /* Media queries 
 To create responsive websites. It's better to build it for mobile and then for desktop
 */
 
-
 .container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .box {
-    background: gold;
-    padding: 1rem;
+  background: gold;
+  padding: 1rem;
 }
 
 .box:nth-of-type(2) {
-    background: dodgerblue;
+  background: dodgerblue;
 }
 
 @media screen and (min-width: 600px) /* and (max-width: 900px) */ {
-    .container { flex-direction: row;
-    }
+  .container {
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 900px) {
-    .container { flex-direction: row;
-    }
-    .box {
-        background: white;
-    }
+  .container {
+    flex-direction: row;
+  }
+  .box {
+    background: white;
+  }
 }
 
 @media print {
-    body {
-        font-size: 12pt;                /* a measure size that makes sense for printing */
-    }
+  body {
+    font-size: 12pt; /* a measure size that makes sense for printing */
+  }
 
-    .box {
-        padding: 0.5cm;
-    }
+  .box {
+    padding: 0.5cm;
+  }
 }

@@ -1,0 +1,220 @@
+body {
+  margin: 50px;
+
+  /* background: url(../../images/Background_images/photo-1455560460927-c48345dd421d.jpg); */
+  /* to add a background image from file or web */
+
+  /* background-repeat: no-repeat; */
+  /* background-repeat: repeat-x; */
+
+  /* background-position: 100px 100px; */
+  /* first one at 100% will position it to the right of the viewport  */
+
+  /* background-size: 100% 100%; */
+  /* background-size: cover; */
+  /* this will stretch the image manintaining the aspect ratio */
+
+  /* background-attachment: fixed; */
+  /* the bakcground will retain its size, relative to the viewport */
+
+  /* height: 100vh; */
+
+  /** SVG images for backgrounds */
+  /* background: url(/images/dragon-scales.svg); */
+  /*! this method doesn't work, the following one does >> */
+  /* background-color: #330055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%233a015d' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23410165' cx='50' cy='100' r='50'/%3E%3Cg fill='%2348026e' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23500376' cx='50' cy='200' r='50'/%3E%3Cg fill='%2357047e' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%235f0587' cx='50' cy='300' r='50'/%3E%3Cg fill='%2367068f' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f0798' cx='50' cy='400' r='50'/%3E%3Cg fill='%237707a0' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%238008a9' cx='50' cy='500' r='50'/%3E%3Cg fill='%238909b1' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%239109ba' cx='50' cy='600' r='50'/%3E%3Cg fill='%239a09c3' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a309cb' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ad09d4' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b608dc' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c007e5' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c905ee' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d303f6' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23D0F' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: contain;*/
+}
+
+/* 
+Raster images: camaras / scanners / software
+Formats JPG, PNG, GIF, WebP, etc
+More pixels = larger file size
+Look blurry if scaled up
+
+Vertor images: creator in softmare (illustrator)
+Format: SVG
+Scalable vertor graphics
+Look sharp at any size
+
+WebP are smaller files, but not soported by Internet Explorer
+JPEG don't support transparency
+
+For decorative images, leave the alt attribute blank (html)
+*/
+
+.plant {
+  width: 100vw;
+}
+
+/* .image {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+} */
+
+/** Sprite generator */
+
+/* Sprite classes */
+
+.bg-001_favourite {
+  width: 128px;
+  height: 128px;
+  background: url("/images/Icons/128_px/css_sprites_hor_pad.png") -158px -10px;
+  display: inline-block;
+}
+
+.bg-002_play {
+  width: 128px;
+  height: 128px;
+  background: url("/images/Icons/128_px/css_sprites_hor_pad.png") -306px -10px;
+  display: inline-block;
+}
+
+.bg-003_high_volume {
+  width: 128px;
+  height: 128px;
+  background: url("/images/Icons/128_px/css_sprites_hor_pad.png") -454px -10px;
+  display: inline-block;
+}
+
+.bg-004_download {
+  width: 128px;
+  height: 128px;
+  background: url("/images/Icons/128_px/css_sprites_hor_pad.png") -602px -10px;
+  display: inline-block;
+}
+
+.bg-005_next {
+  width: 128px;
+  height: 128px;
+  background: url("/images/Icons/128_px/css_sprites_hor_pad.png") -750px -10px;
+  display: inline-block;
+}
+
+.bg-006_playlist {
+  width: 128px;
+  height: 128px;
+  background: url("/images/Icons/128_px/css_sprites_hor_pad.png") -10px -10px;
+  display: inline-block;
+}
+
+/* only use this approach for logos and icons */
+
+/**  Clipping 
+
+Search: css clip generator
+*/
+
+.plant {
+  width: 500px;
+  height: 500px;
+  clip-path: polygon(50% 0%, 21% 100%, 100% 56%);
+}
+
+.shop {
+  width: 500px;
+  height: 500px;
+  clip-path: polygon(50% 0%, 94% 100%, 0 35%);
+}
+
+/** Filter 
+
+CSS filters are not supported by Internet Explorer and Opera Mini
+*/
+
+.macaron:hover {
+  /* filter: grayscale(0%) blur(0); */
+  filter: grayscale(70%) blur(3px);
+}
+
+.macaron {
+}
+
+/** Supporting high-density screens
+
+You have to provide separate images to deal with different screen resolutions
+DPR = device pixel ratio. Smartphones these days have a DPR > physical resolution. (DPR > 1)  
+Scalate your full-size image to 3x (1200px), 2x (800px), and 1x (for this one, refer to the original-size image). Naming convention: original = dish; 3x = dish@3x  
+Use this technique only for beutiful sharp images, not every image on the web page
+*/
+
+/* .dish {
+  width: 400px;
+} */
+
+/** Resolution switching  */
+
+.dish {
+  width: 100vw;
+}
+
+/** SVG images  */
+/* img {
+  width: 18vw;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+} */
+
+/** Icon fonts
+Font awesome
+Ionicons
+Material Design Icons  */
+
+.icon {
+  padding: 1.1rem;
+  font-size: 2rem;
+  color: #330055;
+}
+
+.beat {
+  --fa-animation-duration: 1s;
+  --fa-beat-scale: 2;
+}
+
+.fade {
+  --fa-animation-duration: 1s;
+  --fa-fade-opacity: 0.6;
+}
+
+.beat-fade {
+  --fa-beat-fade-opacity: 0.67;
+  --fa-beat-fade-scale: 1.25;
+}
+
+.bounce {
+  --fa-bounce-start-scale-x: 1.25;
+  --fa-bounce-start-scale-y: 0.75;
+  --fa-bounce-jump-scale-x: 0.75;
+  --fa-bounce-jump-scale-y: 1.5;
+  --fa-bounce-land-scale-x: 1.5;
+  --fa-bounce-land-scale-y: 0.5;
+  --fa-bounce-height: -1.5rem;
+  --fa-bounce-rebound: 0;
+  --fa-animation-duration: 0.75s;
+}
+
+.flip {
+  --fa-flip-x: 0;
+  --fa-flip-y: 1;
+  /* --fa-flip-z: ; */
+  /* --fa-flip-angle: 25; */
+}
+
+.spin {
+  --fa-animation-delay: 1s;
+  --fa-animation-direction: reverse;
+  --fa-animation-duration: 0.5s;
+  --fa-animation-iteration-count: 5;
+  --fa-animation-timing: ease-in-out;
+  /* these are all customizations using CSS custom properties */
+}
+
+ul {
+  padding: 2rem;
+}
